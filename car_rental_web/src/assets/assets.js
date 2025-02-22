@@ -32,6 +32,9 @@ import blg1 from './blg1.png'
 import blg2 from './blg2.png'
 import blg3 from './blg3.png'
 
+import log1  from './log1.png'
+import log2  from './log2.png'
+
 export const assets = {
      bgImg1,
      cris,
@@ -46,7 +49,9 @@ export const assets = {
      lap1,
      blg1,
      blg2,
-     blg3
+     blg3,
+     log1,
+     log2
 }
 
 

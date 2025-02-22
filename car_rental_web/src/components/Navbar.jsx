@@ -19,13 +19,13 @@ function Navbar() {
     <div className="absolute top-3 left-0 w-full flex items-center justify-between px-6 sm:px-10 md:px-16 lg:px-20 py-5 font-medium z-10">
      
       {/* Logo */}
-      <Link to="/">
+      <Link to="/home">
         <p className="text-white text-3xl">Carspace</p>
       </Link>
 
       {/* Navigation Links */}
       <ul className="hidden sm:flex gap-6 text-md text-white">
-        <NavLink to="/" className="flex flex-col items-center gap-1">
+        <NavLink to="/home" className="flex flex-col items-center gap-1">
           <p>Home</p>
           <hr className="w-10 border-none h-[3.5px] bg-red-700 rounded hidden"/>
         </NavLink>
