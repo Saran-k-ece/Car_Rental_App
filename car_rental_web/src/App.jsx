@@ -1,11 +1,10 @@
 import React from 'react'
 import './App.css'
 import {Routes,Route} from 'react-router-dom'
-import CarDetails from './pages/CarDetails'
-import CarCategory from './pages/CarCategory'
 import Home from './pages/Home'
 import SignUp from './pages/SignUp'
 import About from './pages/About'
+import Certified from './pages/Certified'
 
 const App = () => {
   return (
@@ -15,9 +14,8 @@ const App = () => {
         <Route path='/' element={<SignUp/>} />
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/certified" element={<Home />} />
-        <Route path="/carDetails/:id" element={<CarDetails />} />
-        <Route path="/carCategory" element={<CarCategory />} />
+        <Route path="/certified" element={<Certified />} />
+   
       </Routes>
     </div>
   );

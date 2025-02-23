@@ -43,6 +43,20 @@ import team2 from './team2.png'
 import team3 from './team3.png'
 import team4 from './team4.png'
 
+
+
+
+
+import certified1 from './certified1.jpeg'
+import benz1 from './benz1.png'
+import benz2 from './benz2.png'
+import benz3 from './benz3.png'
+import benz4 from './benz4.png'
+import benz5 from './benz5.png'
+
+
+
+
 export const assets = {
      bgImg1,
      cris,
@@ -66,6 +80,12 @@ export const assets = {
      team2,
      team3,
      team4,
+     certified1,
+     benz1,
+     benz2,
+     benz3,
+     benz4,
+     benz5,
 }
 
 

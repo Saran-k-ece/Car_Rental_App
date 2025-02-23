@@ -60,6 +60,7 @@ const FAQSection = () => {
             >
               {faq.question}
               {openIndex === index ? <FaChevronUp className="text-gray-600" /> : <FaChevronDown className="text-gray-600" />}
+            
             </button>
             {openIndex === index && faq.answer && (
               <p className="text-gray-500 mt-2 text-base">{faq.answer}</p>
