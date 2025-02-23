@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import SignUp from './pages/SignUp'
 import About from './pages/About'
 import Certified from './pages/Certified'
+import CarDetails from './pages/CarCategory'
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/certified" element={<Certified />} />
+        <Route path="/carDetails" element={<CarDetails />} />
    
       </Routes>
     </div>

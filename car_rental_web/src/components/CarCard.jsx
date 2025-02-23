@@ -50,7 +50,7 @@ const CarCard = ({ car }) => {
         <hr className="mt-3 border-gray-300" />
 
         <div className="mt-4 flex justify-between items-center">
-          <Link to='/carDetails/:id' className="text-black font-semibold flex items-center hover:underline">
+          <Link to='/carDetails' className="text-black font-semibold flex items-center hover:underline">
             View details →
           </Link>
           <Heart className="w-5 h-5 text-gray-500 cursor-pointer hover:text-red-500 transition" />
