@@ -58,7 +58,7 @@ function Navbar() {
 
           {isOpen && (
             <div className="absolute right-0 top-10 md:top-12 bg-white shadow-lg border border-gray-200 rounded-lg py-2 w-28 md:w-32 text-xs md:text-sm z-10">
-              <hr className="w-auto" />
+            
               <button 
                 className="block w-full px-3 md:px-4 py-1 md:py-2 text-gray-700 hover:bg-gray-100"
                 onClick={closeDropdown} 
