@@ -35,6 +35,14 @@ import blg3 from './blg3.png'
 import log1  from './log1.png'
 import log2  from './log2.png'
 
+import about1 from './about1.png'
+import about2 from  './about2.png'
+
+import team1 from './team1.png'
+import team2 from './team2.png'
+import team3 from './team3.png'
+import team4 from './team4.png'
+
 export const assets = {
      bgImg1,
      cris,
@@ -51,7 +59,13 @@ export const assets = {
      blg2,
      blg3,
      log1,
-     log2
+     log2,
+     about1,
+     about2,
+     team1,
+     team2,
+     team3,
+     team4,
 }
 
 
@@ -61,6 +75,7 @@ export const cars = [
     "name": "Chevrolet Suburban 2021",
     "brand": "Chevrolet",
     "model": "Suburban",
+    "type": "used",
     "year": 2021,
     "price_per_day": 270000,
     "fuel_type": "Petrol",
@@ -74,6 +89,7 @@ export const cars = [
     "name": "Tesla Model S",
     "brand": "Tesla",
     "model": "Model S",
+    "type": "new",
     "year": 2022,
     "price_per_day": 350000,
     "fuel_type": "Electric",
@@ -87,6 +103,7 @@ export const cars = [
     "name": "Ford Mustang GT",
     "brand": "Ford",
     "model": "Mustang GT",
+    "type": "used",
     "year": 2020,
     "price_per_day": 3000000,
     "fuel_type": "Petrol",
@@ -100,6 +117,7 @@ export const cars = [
     "name": "BMW X5",
     "brand": "BMW",
     "model": "X5",
+    "type": "new",
     "year": 2021,
     "price_per_day": 3200000,
     "fuel_type": "Diesel",
@@ -113,6 +131,7 @@ export const cars = [
     "name": "Audi Q7",
     "brand": "Audi",
     "model": "Q7",
+    "type": "used",
     "year": 2023,
     "price_per_day": 3300000,
     "fuel_type": "Petrol",
@@ -126,6 +145,7 @@ export const cars = [
     "name": "Mercedes-Benz C-Class",
     "brand": "Mercedes-Benz",
     "model": "C-Class",
+    "type": "new",
     "year": 2022,
     "price_per_day": 3400000,
     "fuel_type": "Diesel",
@@ -139,6 +159,7 @@ export const cars = [
     "name": "Hyundai Creta",
     "brand": "Hyundai",
     "model": "Creta",
+    "type": "used",
     "year": 2022,
     "price_per_day": 1800000,
     "fuel_type": "Petrol",
@@ -152,6 +173,7 @@ export const cars = [
     "name": "Toyota Fortuner",
     "brand": "Toyota",
     "model": "Fortuner",
+    "type": "new",
     "year": 2021,
     "price_per_day": 2900000,
     "fuel_type": "Diesel",
@@ -165,6 +187,7 @@ export const cars = [
     "name": "Honda Civic",
     "brand": "Honda",
     "model": "Civic",
+    "type": "used",
     "year": 2020,
     "price_per_day": 2000000,
     "fuel_type": "Petrol",
@@ -178,6 +201,7 @@ export const cars = [
     "name": "Jeep Wrangler",
     "brand": "Jeep",
     "model": "Wrangler",
+    "type": "new",
     "year": 2023,
     "price_per_day": 3600000,
     "fuel_type": "Petrol",
@@ -191,6 +215,7 @@ export const cars = [
     "name": "Nissan Altima",
     "brand": "Nissan",
     "model": "Altima",
+    "type": "used",
     "year": 2021,
     "price_per_day": 2100000,
     "fuel_type": "Petrol",
@@ -204,6 +229,7 @@ export const cars = [
     "name": "Volkswagen Tiguan",
     "brand": "Volkswagen",
     "model": "Tiguan",
+    "type": "new",
     "year": 2022,
     "price_per_day": 2500000,
     "fuel_type": "Diesel",
@@ -217,6 +243,7 @@ export const cars = [
     "name": "Mazda CX-5",
     "brand": "Mazda",
     "model": "CX-5",
+    "type": "used",
     "year": 2021,
     "price_per_day": 2200000,
     "fuel_type": "Petrol",
@@ -230,6 +257,7 @@ export const cars = [
     "name": "Subaru Outback",
     "brand": "Subaru",
     "model": "Outback",
+    "type": "new",
     "year": 2022,
     "price_per_day": 2300000,
     "fuel_type": "Petrol",
@@ -243,6 +271,7 @@ export const cars = [
     "name": "Lexus RX",
     "brand": "Lexus",
     "model": "RX",
+    "type": "used",
     "year": 2021,
     "price_per_day": 3100000,
     "fuel_type": "Hybrid",

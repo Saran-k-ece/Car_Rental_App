@@ -8,11 +8,15 @@ const FeatureList = () => {
   const [listCar, setListCar] = useState([]);
 
   useEffect(() => {
-    setListCar(cars.slice(0, 9));
-  }, [cars]);
+    if (selected === "All") {
+      setListCar(cars.slice(0, 9));
+    } else {
+      setListCar(cars.filter((car) => car.type.toLowerCase() === selected.toLowerCase()).slice(0, 9));
+    }
+  }, [cars, selected]);
 
   return (
-    <div className="w-full px-6 sm:px-8 py-6 mx-auto ">
+    <div className="w-full px-6 sm:px-8 py-6 mx-auto">
       <div className="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4">
         <h1 className="text-xl sm:text-2xl font-semibold flex items-center px-0">
           <span className="w-2 h-6 bg-red-500 mr-2"></span> Feature Listing
@@ -38,11 +42,10 @@ const FeatureList = () => {
       </div>
 
       <div className="flex flex-col items-center mt-8 sm:mt-[5vw]">
-          <button className="bg-red-500 text-white text-sm sm:text-md py-2 px-6 rounded-lg w-full max-w-[180px] transition duration-300 hover:bg-red-600">
-              Load more
+        <button className="bg-red-500 text-white text-sm sm:text-md py-2 px-6 rounded-lg w-full max-w-[180px] transition duration-300 hover:bg-red-600">
+          Load more
         </button>
       </div>
-
     </div>
   );
 };

@@ -27,7 +27,7 @@ const SignUp = () => {
         setIsSignUp(false);
       } else {
         await signInWithEmailAndPassword(auth, email, password);
-        toast.success("Login Successful 🚀");
+        toast.success("Login Successful 🎉 ");
         setTimeout(() => navigate("/home"), 2000);
       }
     } catch (error) {

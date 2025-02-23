@@ -24,13 +24,13 @@ body, html {
   overflow-x: hidden;
 }
 
-/* Hide scrollbar globally */
+
 body {
-  overflow-y: scroll; /* Allows scrolling */
-  scrollbar-width: none; /* Firefox */
+  overflow-y: scroll; 
+  scrollbar-width: none; 
 }
 
-/* Hide scrollbar in Chrome, Edge, Safari */
+
 body::-webkit-scrollbar {
   display: none;
 }
