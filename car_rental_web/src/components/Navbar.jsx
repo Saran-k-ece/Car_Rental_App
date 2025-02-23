@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { assets } from '../assets/assets';
+import { getAuth, signOut } from 'firebase/auth';
+import { app } from '../firebase/FireBase';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const auth = getAuth(app);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -16,6 +20,15 @@ function Navbar() {
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
+  };
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      navigate('/'); 
+    } catch (error) {
+      console.error("Logout Error: ", error);
+    }
   };
 
   return (
@@ -78,7 +91,7 @@ function Navbar() {
             <div className="absolute right-0 top-10 md:top-12 bg-white shadow-lg border border-gray-200 rounded-lg py-2 w-28 md:w-32 text-xs md:text-sm z-10">
               <button 
                 className="block w-full px-3 md:px-4 py-1 md:py-2 text-gray-700 hover:bg-gray-100"
-                onClick={closeDropdown} 
+                onClick={handleLogout} 
               >
                 Logout
               </button>

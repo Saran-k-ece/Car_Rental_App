@@ -5,7 +5,7 @@ import Home from './pages/Home'
 import SignUp from './pages/SignUp'
 import About from './pages/About'
 import Certified from './pages/Certified'
-import CarDetails from './pages/CarCategory'
+import CarDetails from './pages/CarDetails'
 
 const App = () => {
   return (
