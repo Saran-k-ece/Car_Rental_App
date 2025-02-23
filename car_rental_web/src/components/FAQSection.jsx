@@ -5,27 +5,32 @@ const faqs = [
   {
     question: "How flexible are Carspace's membership plans?",
     answer:
-      "Frequently asked questions ordered by popularity. Remember that if the visitor has not committed to the call to action, they may still have questions (doubts) that can be answered.",
+      "Carspace offers a range of flexible membership plans, including daily, weekly, and monthly options. Members can upgrade, downgrade, or cancel their plans anytime based on their needs, ensuring a hassle-free experience.",
   },
   {
     question: "What kind of events and networking opportunities does Carspace provide?",
-    answer: "",
+    answer:
+      "Carspace hosts a variety of events, including industry meetups, skill-building workshops, guest speaker sessions, and networking mixers. These events are designed to foster collaboration and help members connect with like-minded professionals.",
   },
   {
     question: "Can I tour the Carspace before committing to a membership?",
-    answer: "",
+    answer:
+      "Yes! Carspace encourages potential members to schedule a tour before making a decision. You can explore the workspace, check out the amenities, and see if it aligns with your workstyle before signing up.",
   },
   {
     question: "Is Carspace suitable for remote teams and distributed workforces?",
-    answer: "",
+    answer:
+      "Absolutely! Carspace provides high-speed internet, private meeting rooms, and virtual office solutions, making it an ideal environment for remote teams and distributed workforces to collaborate efficiently.",
   },
   {
     question: "What measures does Carspace take for environmental sustainability?",
-    answer: "",
+    answer:
+      "Carspace is committed to sustainability by incorporating energy-efficient lighting, eco-friendly furniture, recycling programs, and green initiatives. We strive to create a workspace that minimizes environmental impact while promoting a healthy work environment.",
   },
   {
-    question: "Still has questions?",
-    answer: "",
+    question: "Still have questions?",
+    answer:
+      "Feel free to reach out to our support team! You can contact us via email, phone, or visit our nearest Carspace location for more details.",
   },
 ];
 
