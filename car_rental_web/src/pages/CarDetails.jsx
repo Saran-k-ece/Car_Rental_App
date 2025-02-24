@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 import { assets } from "../assets/assets";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import { useState } from "react";
 
 const defaultFeatures = [
   "A/C: Front", "Front fog light", "Power steering",
@@ -36,6 +36,26 @@ const CarDetails = () => {
       progress: undefined,
       theme: "light",
     });
+  };
+
+  const [totalAmount, setTotalAmount] = useState();
+  const [downPayment, setDownPayment] = useState();
+  const [amortization, setAmortization] = useState(1);
+  const [interestRate, setInterestRate] = useState(0);
+  const [monthlyPayment, setMonthlyPayment] = useState(0);
+
+  const calculateLoan = () => {
+    const loanAmount = totalAmount - downPayment;
+    const monthlyRate = interestRate / 100 / 12;
+    const numberOfPayments = amortization * 12;
+    
+    if (monthlyRate === 0) {
+      setMonthlyPayment(loanAmount / numberOfPayments);
+    } else {
+      const payment = 
+        (loanAmount * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -numberOfPayments));
+      setMonthlyPayment(payment);
+    }
   };
 
   
@@ -173,31 +193,48 @@ const CarDetails = () => {
       
       {/* Loan Calculator */}
       <div className="max-w-7xl mx-auto p-6">
-        <div className="bg-white p-8 rounded-xl shadow-md border">
-          <h2 className="text-2xl font-bold flex items-center">
-            <span className="border-l-4 border-red-500 pl-2">Loan Calculator</span>
-          </h2>
+      <div className="bg-white p-8 rounded-xl shadow-md border">
+        <h2 className="text-2xl font-bold flex items-center">
+          <span className="border-l-4 border-red-500 pl-2">Loan Calculator</span>
+        </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
-            {["Total Amount", "Down Payment", "Ammonization period", "Interest"].map((label, index) => (
-              <div key={index}>
-                <label className="block text-gray-700 mb-1">{label}</label>
-                <input
-                  type="text"
-                  className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-red-400"
-                />
-              </div>
-            ))}
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
+          {["Total Amount", "Down Payment", "Amortization Period (Years)", "Interest Rate (%)"].map((label, index) => (
+            <div key={index}>
+              <label className="block text-gray-700 mb-1">{label}</label>
+              <input
+                type="number"
+                className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-red-400"
+                value={
+                  index === 0 ? totalAmount :
+                  index === 1 ? downPayment :
+                  index === 2 ? amortization :
+                  interestRate
+                }
+                onChange={(e) => {
+                  const value = parseFloat(e.target.value) || 0;
+                  if (index === 0) setTotalAmount(value);
+                  if (index === 1) setDownPayment(value);
+                  if (index === 2) setAmortization(value);
+                  if (index === 3) setInterestRate(value);
+                }}
+              />
+            </div>
+          ))}
+        </div>
 
-          <div className="flex mt-6 space-x-4">
-            <button className="bg-red-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-red-700">
-              Calculate
-            </button>
-            <button className="text-red-600 font-semibold hover:underline">Reset</button>
-          </div>
+        <button
+          onClick={calculateLoan}
+          className="mt-6 w-full bg-red-500 text-white py-2 rounded-lg hover:bg-red-600"
+        >
+          Calculate
+        </button>
+
+        <div className="mt-4 text-xl font-semibold text-gray-800">
+          Monthly Payment: ₹{monthlyPayment.toFixed(2)}
         </div>
-        </div>
+      </div>
+    </div>
       <Footer />
     </div>
   );
