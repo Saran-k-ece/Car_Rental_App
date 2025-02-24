@@ -2,9 +2,15 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGasPump, faTachometerAlt, faCogs } from "@fortawesome/free-solid-svg-icons";
 import { Heart } from "lucide-react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const CarCard = ({ car }) => {
+  const navigate = useNavigate();
+
+  const handleViewDetails = () => {
+    navigate(`/carDetails/${car.id}`, { state: { car } });
+  };
+
   return (
     <div className="bg-white shadow-lg rounded-xl overflow-hidden border border-gray-200 
         w-full max-w-[400px] sm:max-w-[500px] p-6 transition duration-300 hover:shadow-xl mx-auto sm:mx-4 my-4">
@@ -50,9 +56,9 @@ const CarCard = ({ car }) => {
         <hr className="mt-3 border-gray-300" />
 
         <div className="mt-4 flex justify-between items-center">
-          <Link to='/carDetails' className="text-black font-semibold flex items-center hover:underline">
+          <button onClick={handleViewDetails} className="text-black font-semibold flex items-center hover:underline">
             View details →
-          </Link>
+          </button>
           <Heart className="w-5 h-5 text-gray-500 cursor-pointer hover:text-red-500 transition" />
         </div>
       </div>

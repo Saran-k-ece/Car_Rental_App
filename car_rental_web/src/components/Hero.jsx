@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { assets } from "../assets/assets";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const [selected, setSelected] = useState("new");
@@ -22,9 +23,11 @@ const Hero = () => {
         </p>
 
         {/* CTA Button */}
-        <button className="mt-5 sm:mt-7 bg-gradient-to-r from-red-500 to-red-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-sm sm:text-lg font-bold uppercase tracking-wider shadow-md hover:shadow-xl transition transform hover:scale-105">
+      <Link to="/certified">
+      <button className="mt-5 sm:mt-7 bg-gradient-to-r from-red-500 to-red-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-sm sm:text-lg font-bold uppercase tracking-wider shadow-md hover:shadow-xl transition transform hover:scale-105">
           Book My Car
         </button>
+      </Link>  
 
         {/* Ratings Section */}
         <div className="mt-5 flex items-center justify-center lg:justify-start gap-2">

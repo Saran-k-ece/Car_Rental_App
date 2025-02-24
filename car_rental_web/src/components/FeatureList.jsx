@@ -6,14 +6,15 @@ const FeatureList = () => {
   const { cars } = useContext(CarContext);
   const [selected, setSelected] = useState("All");
   const [listCar, setListCar] = useState([]);
+  const [showAll, setShowAll] = useState(false);
 
   useEffect(() => {
-    if (selected === "All") {
-      setListCar(cars.slice(0, 9));
-    } else {
-      setListCar(cars.filter((car) => car.type.toLowerCase() === selected.toLowerCase()).slice(0, 9));
-    }
-  }, [cars, selected]);
+    let filteredCars = selected === "All" 
+      ? cars 
+      : cars.filter((car) => car.type.toLowerCase() === selected.toLowerCase());
+
+    setListCar(showAll ? filteredCars : filteredCars.slice(0, 9));
+  }, [cars, selected, showAll]);
 
   return (
     <div className="w-full px-6 sm:px-8 py-6 mx-auto">
@@ -27,7 +28,10 @@ const FeatureList = () => {
               key={type}
               className={`w-full sm:w-auto px-6 py-3 text-sm sm:text-lg font-semibold rounded-md transition duration-300 
                 ${selected === type ? "bg-red-500 text-white border-red-500 shadow-md" : "bg-white text-gray-500 hover:bg-gray-100"}`}
-              onClick={() => setSelected(type)}
+              onClick={() => {
+                setSelected(type);
+                setShowAll(false); // Reset showAll when changing category
+              }}
             >
               {type} Cars
             </button>
@@ -41,11 +45,16 @@ const FeatureList = () => {
         ))}
       </div>
 
-      <div className="flex flex-col items-center mt-8 sm:mt-[5vw]">
-        <button className="bg-red-500 text-white text-sm sm:text-md py-2 px-6 rounded-lg w-full max-w-[180px] transition duration-300 hover:bg-red-600">
-          Load more
-        </button>
-      </div>
+      {listCar.length < cars.length && (
+        <div className="flex flex-col items-center mt-8 sm:mt-[5vw]">
+          <button
+            className="bg-red-500 text-white text-sm sm:text-md py-2 px-6 rounded-lg w-full max-w-[180px] transition duration-300 hover:bg-red-600"
+            onClick={() => setShowAll(true)}
+          >
+            Load more
+          </button>
+        </div>
+      )}
     </div>
   );
 };
