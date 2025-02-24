@@ -5,7 +5,7 @@ import { FaQuoteLeft } from "react-icons/fa";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import './Testimonial.css'
+import './Testimonial.css';
 
 const testimonials = [
   {
@@ -36,20 +36,20 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <div className="flex flex-col-reverse sm:flex-row gap-10 items-center justify-center px-4 sm:px-12 md:px-20 py-12">
+    <div className="flex flex-col-reverse md:flex-row gap-6 md:gap-10 items-center justify-center px-4 sm:px-12 md:px-16 lg:px-20 py-12 ">
       {/* Section Title */}
-      <div className="text-center sm:text-left max-w-lg w-full">
-        <h2 className="text-4xl sm:text-5xl font-bold text-gray-800 leading-snug">
+      <div className="text-center md:text-left max-w-lg w-full hidden lg:block">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 leading-snug">
           <span className="border-l-4 border-red-500 pl-3">Hear From Our</span> <br />
           Community
         </h2>
-        <p className="text-gray-500 mt-4 text-base">
+        <p className="text-gray-500 mt-4 text-base md:text-lg">
           What our clients say about their experiences.
         </p>
       </div>
 
       {/* Testimonial Carousel */}
-      <div className="w-full sm:max-w-3xl mt-6 sm:mt-0">
+      <div className="w-full md:max-w-2xl lg:max-w-3xl mt-6 md:mt-0">
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
           spaceBetween={20}
@@ -57,22 +57,22 @@ const Testimonials = () => {
           navigation
           pagination={{ clickable: true }}
           autoplay={{ delay: 4000, disableOnInteraction: false }}
-          className="bg-white shadow-lg rounded-xl p-6 sm:p-10"
+          className="bg-white shadow-lg rounded-xl p-6 md:p-8 lg:p-10 pb-4"
         >
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={index} className="p-4 flex flex-col items-center text-center">
-              <FaQuoteLeft className="text-red-500 text-4xl" />
-              <p className="text-gray-800 mt-4 text-lg sm:text-xl font-medium leading-relaxed">
+              <FaQuoteLeft className="text-red-500 text-3xl md:text-4xl ml-1 md:ml-2" />
+              <p className="text-gray-800 mt-4 text-base md:text-lg font-medium leading-relaxed">
                 "{testimonial.review}"
               </p>
               <div className="flex flex-col items-center mt-6 border-t pt-4 w-full">
                 <img
                   src={testimonial.image}
                   alt={testimonial.name}
-                  className="w-16 h-16 rounded-full border-4 border-red-400"
+                  className="w-14 h-14 md:w-16 md:h-16 rounded-full border-4 border-red-400"
                 />
                 <p className="font-semibold text-lg mt-3">{testimonial.name}</p>
-                <div className="text-yellow-400 text-xl">⭐⭐⭐⭐⭐</div>
+                <div className="text-yellow-400 text-lg md:text-xl">⭐⭐⭐⭐⭐</div>
               </div>
             </SwiperSlide>
           ))}

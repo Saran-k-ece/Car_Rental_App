@@ -61,12 +61,15 @@ function Navbar() {
       <ul className="hidden sm:flex gap-4 md:gap-6 text-sm md:text-md text-white">
         <NavLink to="/home" className="flex flex-col items-center gap-1">
           <p>Home</p>
+          <hr className='w-full h-1 bg-red-600 hidden' />
         </NavLink>
         <NavLink to="/about" className="flex flex-col items-center gap-1">
           <p>About us</p>
+          <hr className='w-full h-1 bg-red-600 hidden' />
         </NavLink>
         <NavLink to="/certified" className="flex flex-col items-center gap-1">
           <p>Certified Pre-Owned</p>
+          <hr className='w-full h-1 bg-red-600 hidden' />
         </NavLink>
       </ul>
 
